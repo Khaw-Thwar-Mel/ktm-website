@@ -14,7 +14,7 @@ const Footer = () => {
   const [snackbarOpenStatus, setSnackbarOpenStatus] = useState(false);
   const [errorMsg, setErrorMsg] = useState();
   const [successMsg, setSuccessMsg] = useState();
-  const isEmail = (email) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
   // const handleClick = () => {
   //   setSnackbarOpenStatus(true);
@@ -31,10 +31,7 @@ const Footer = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     
-    if (isEmail) {
-      setSnackbarOpenStatus(true);
-      setErrorMsg("Please enter a valid email address!");
-    } else {      
+    if (emailRegex.test(email)) {
       emailjs
         .send(
           process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -50,6 +47,9 @@ const Footer = () => {
           setSuccessMsg("Successfully subscribed !");
           setEmail("");
         });
+    } else {
+      setSnackbarOpenStatus(true);
+      setErrorMsg("Please enter a valid email address!");
     }
   };
   return (
