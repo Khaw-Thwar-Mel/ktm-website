@@ -11,10 +11,13 @@ import { useState } from "react";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
-  const [open, setOpen] = useState(false);
+  const [snackbarOpenStatus, setSnackbarOpenStatus] = useState(false);
+  const [errorMsg, setErrorMsg] = useState();
+  const [successMsg, setSuccessMsg] = useState();
+  const isEmail = (email) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
 
   // const handleClick = () => {
-  //   setOpen(true);
+  //   setSnackbarOpenStatus(true);
   // };
 
   const handleClose = (reason) => {
@@ -22,25 +25,32 @@ const Footer = () => {
       return;
     }
 
-    setOpen(false);
+    setSnackbarOpenStatus(false);
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setEmail("");
-
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE,
-        {
-          from_name: email,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
-      .then(() => {
-        setOpen(true);
-      });
+    
+    if (isEmail) {
+      setSnackbarOpenStatus(true);
+      setErrorMsg("Please enter a valid email address!");
+    } else {      
+      emailjs
+        .send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE,
+          {
+            from_name: email,
+          },
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        )
+        .then(() => {
+          setSnackbarOpenStatus(true);
+          setErrorMsg(null);
+          setSuccessMsg("Successfully subscribed !");
+          setEmail("");
+        });
+    }
   };
   return (
     <Box>
@@ -53,14 +63,20 @@ const Footer = () => {
       </svg>
 
       <Snackbar
-        open={open}
+        open={snackbarOpenStatus}
         autoHideDuration={3000}
         onClose={handleClose}
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
       >
-        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          Successfully subscribed !
-        </Alert>
+        {errorMsg ? (
+          <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
+            {errorMsg}
+          </Alert>
+        ) : (
+          <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+            {successMsg}
+          </Alert>
+        )}
       </Snackbar>
       <Box bgcolor={colors.gray} mt="-5px" px={{ lg: 12, sm: 2, xs: 2 }}>
         <Box maxWidth="1440px" margin="auto" pb={4}>
