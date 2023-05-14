@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { Box } from "@mui/material";
 import { colors } from "../../data/colors";
 import CustomButton from "../../components/CustomButton";
@@ -55,7 +56,17 @@ const Navbar = () => {
               <CustomIconButton key={index} data={item} />
             ))}
           </Box>
-          <CustomButton text="Subscribe" backgroundColor={colors.yellow} />
+          <CustomButton 
+            text="Subscribe"
+            backgroundColor={colors.yellow}
+            onClickHandler={() => {
+              window.scrollTo({
+                top: document.body.scrollHeight,
+                left: 0,
+                behavior: 'smooth',
+              });
+            }}
+          />
         </Box>
       </Box>
     </Box>
