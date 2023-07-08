@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
 import HelpingHand from "../components/HelpingHand";
@@ -12,7 +12,9 @@ export default function Home() {
   return (
     <Box>
       <Navbar />
+
       <HomePageHero />
+      <p className="text-green-500">hehe</p>
       <AboutUs />
       <Mission />
       <HelpingHand />
