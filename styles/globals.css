@@ -1,3 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-btn {
+  background-color: #fccd35 !important;
+}
+
 html,
 body {
   padding: 0;
@@ -12,6 +20,19 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  background-color: #fccd35;
+  background-image: none;
+}
+
+.MuiIconButton-root {
+  background-color: #fff3cd !important;
 }
 
 /* @media (prefers-color-scheme: dark) {
