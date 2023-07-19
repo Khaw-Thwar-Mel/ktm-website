@@ -1,15 +1,16 @@
 import { Box, Typography } from "@mui/material";
 
-export default function Home() {
+const Blogs = () => {
   return (
     <Box
       width={"100%"}
       height={"500px"}
-      display={"flex"}
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Typography>Home Page</Typography>
+      <Typography>Blogs Page</Typography>
     </Box>
   );
-}
+};
+
+export default Blogs;

@@ -29,3 +29,18 @@ export const contactChannel = [
     link: "mailto:khawthwarmel@gmail.com",
   },
 ];
+
+export const navigationLinks = [
+  {
+    link: "",
+    text: "Home",
+  },
+  {
+    link: "",
+    text: "About Us",
+  },
+  {
+    link: "",
+    text: "Blogs",
+  },
+];

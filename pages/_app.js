@@ -1,5 +1,7 @@
 import { createTheme, ThemeProvider } from "@mui/material";
 import "../styles/globals.css";
+import Layout from "../components/Layout";
+import { AnimatePresence } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
   const theme = createTheme({
@@ -9,7 +11,11 @@ function MyApp({ Component, pageProps }) {
   });
   return (
     <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
+      <Layout>
+        <AnimatePresence mode="wait">
+          <Component {...pageProps} />
+        </AnimatePresence>
+      </Layout>
     </ThemeProvider>
   );
 }
