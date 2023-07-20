@@ -32,15 +32,15 @@ export const contactChannel = [
 
 export const navigationLinks = [
   {
-    link: "",
+    link: "/",
     text: "Home",
   },
   {
-    link: "",
+    link: "/aboutus",
     text: "About Us",
   },
   {
-    link: "",
+    link: "/blogs",
     text: "Blogs",
   },
 ];

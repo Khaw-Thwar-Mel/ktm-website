@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Link } from "@mui/material";
 import NavbarLink from "./navbarLink";
+import { navigationLinks } from "../../data";
 
 /* eslint-disable react/display-name */
 const Navbar = () => {
@@ -18,9 +19,9 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex justify-between basis-1/4">
-          <NavbarLink href={"/"} text={"Home"} />
-          <NavbarLink href={"/aboutus"} text={"About Us"} />
-          <NavbarLink href={"/blogs"} text={"Blogs"} />
+          {navigationLinks.map((item, index) => (
+            <NavbarLink key={index} href={item.link} text={item.text} />
+          ))}
         </div>
       </div>
     </nav>
