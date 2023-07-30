@@ -1,17 +1,17 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import AboutUs from "../../components/AboutUs";
+import OurValues from "../../components/OurValues";
 
-const AboutUs = () => {
+export default function AboutUsPage() {
   return (
     <Box
       width={"100%"}
-      height={"500px"}
       display={"flex"}
+      flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Typography>About Us Page</Typography>
+      <OurValues />
     </Box>
   );
-};
-
-export default AboutUs;
+}
