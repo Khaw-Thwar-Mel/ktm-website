@@ -19,7 +19,7 @@ export const socialLinks = [
 
 export const contactChannel = [
   {
-    data: "09442469774",
+    data: "+959-442469774",
     icon: <FaPhoneAlt />,
     link: "tel:+959442469774",
   },

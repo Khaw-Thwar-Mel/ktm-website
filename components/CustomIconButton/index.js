@@ -25,8 +25,9 @@ const CustomIconButton = ({ data }) => {
       </Link>
       {data?.data && (
         <Typography
-          fontSize={{ md: "16px", sm: "14px", xs: "13px" }}
-          px={{ sm: 1, xs: "4px" }}
+          fontSize={{ md: "24px", xs: "20px" }}
+          fontWeight={500}
+          px={"20px"}
           sx={{
             cursor: "pointer",
           }}
