@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { colors } from "../../data/colors";
-import { homepageContent } from "../../data/homepage";
+import { aboutusContents } from "../../data/aboutusContents";
 import ValueIcon from "./ValueIcon";
 import Title from "../Title";
 
@@ -49,7 +49,7 @@ const OurValues = () => {
             height: "350px",
           }}
         >
-          {homepageContent.values.map((item, index) => (
+          {aboutusContents.ourValues.map((item, index) => (
             <ValueIcon key={index} icon={item.icon} text={item.text} />
           ))}
         </Box>
