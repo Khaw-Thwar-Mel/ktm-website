@@ -5,6 +5,9 @@ export const aboutusContents = {
   ourVision:
     "Khaw Thwar Mel's vision is to foster a more inclusive society in which equal access to technology, education and employment opportunities.",
 
+  ourMission:
+    "Our mission is to accomplish that by leveraging technology and bringing the disabled community not to be left behind in terms of lifestyles and trends.",
+
   socialCommitments: [
     "Enabling the deaf community to learn Myanmar Sign Language at their convenience and from any location",
     "Facilitating the fluent reading and writing of both Myanmar and English for the deaf community.",
