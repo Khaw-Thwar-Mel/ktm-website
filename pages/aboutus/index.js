@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
-import AboutUs from "../../components/AboutUs";
 import OurValues from "../../components/OurValues";
+import OurStory from "../../components/OurStory";
+import AboutUs from "../../components/AboutUs";
 
 export default function AboutUsPage() {
   return (
@@ -11,6 +12,8 @@ export default function AboutUsPage() {
       justifyContent={"center"}
       alignItems={"center"}
     >
+      <AboutUs />
+      <OurStory />
       <OurValues />
     </Box>
   );
