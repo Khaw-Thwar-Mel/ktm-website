@@ -10,7 +10,7 @@ const OurStory = () => {
       flexDirection={"row"}
       alignItems={"flex-start"}
       justifyContent={"space-around"}
-      my={"100px"}
+      py={"100px"}
     >
       <Box>
         <Typography fontSize={"56px"} fontWeight={700} color={colors.yellow}>

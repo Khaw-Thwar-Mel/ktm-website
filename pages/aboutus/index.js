@@ -2,6 +2,8 @@ import { Box } from "@mui/material";
 import OurValues from "../../components/OurValues";
 import OurStory from "../../components/OurStory";
 import AboutUs from "../../components/AboutUs";
+import OurVision from "../../components/OurVision";
+import OurMission from "../../components/OurMission/index.js";
 
 export default function AboutUsPage() {
   return (
@@ -14,6 +16,8 @@ export default function AboutUsPage() {
     >
       <AboutUs />
       <OurStory />
+      <OurVision />
+      <OurMission />
       <OurValues />
     </Box>
   );
