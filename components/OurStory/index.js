@@ -1,11 +1,15 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { colors } from "../../data/colors";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { contents, fontSizes } from "../../data/aboutUs";
+import { useRef } from "react";
 
 const OurStory = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { amount: 0.5, once: true });
+
   return (
-    <Box py={15}>
+    <Box ref={sectionRef} py={15}>
       <Grid
         container
         columns={{ lg: 12, md: 6, xs: 6 }}
@@ -17,8 +21,7 @@ const OurStory = () => {
           <Typography
             component={motion.p}
             initial={{ x: -100 }}
-            whileInView={{ x: 0 }}
-            viewport={{ once: true }}
+            animate={{ x: isInView ? 0 : -100 }}
             transition={{ duration: 0.8 }}
             sx={{
               fontSize: fontSizes.heading,
@@ -34,11 +37,10 @@ const OurStory = () => {
           <Typography
             component={motion.p}
             initial={{ x: 100, lineHeight: 4 }}
-            whileInView={{
-              x: 0,
-              lineHeight: 1.5,
+            animate={{
+              x: isInView ? 0 : 100,
+              lineHeight: isInView ? 1.5 : 4,
             }}
-            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             sx={{
               py: 0,
