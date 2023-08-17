@@ -1,46 +1,56 @@
 import { Box, Typography } from "@mui/material";
 import { colors } from "../../data/colors";
-import { homepageContent } from "../../data/homepage";
-import Title from "../Title";
+import { contents as aboutusContents } from "../../data/aboutUs";
 import ValueIcon from "./ValueIcon";
+import Title from "../Title";
 
 const OurValues = () => {
   return (
-    <Box bgcolor={colors.black}>
+    <Box
+      sx={{
+        bgcolor: colors.black,
+        width: "100%",
+        height: "600px",
+        display: "flex",
+      }}
+    >
       <Box
-        maxWidth={{ xl: "80%", lg: "1200px", md: "100%" }}
-        py={{ xl: 16, lg: 12, md: 8, sm: 8, xs: 6 }}
-        margin="auto"
-        display="flex"
-        flexDirection="column"
+        sx={{
+          width: "1300px",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          color: "white",
+          mx: "auto",
+        }}
       >
-        <Title
-          text="Our Values"
-          color={colors.yellow}
-          textColor={colors.black}
-          style="contain"
-        />
-        <Typography
-          px={{ xl: 20, lg: 12, md: 8, sm: 6, xs: 2 }}
-          py={{ xl: 6, lg: 6, md: 4, xs: 3 }}
-          color="white"
-          fontSize={{ xl: 28, lg: 24, md: 20, sm: 18, xs: 14 }}
-          fontWeight={500}
-          textAlign="center"
-        >
-          Our social enterprise&#39;s value include:
-        </Typography>
         <Box
-          display="flex"
-          alignItems="flex-start"
-          flexWrap="wrap"
-          justifyContent="center"
-          mt={{ lg: 2, xs: 1 }}
-          px={{ sm: 0, xs: 1 }}
-          gap={{ lg: 10, md: 6, sm: 4, xs: 5 }}
+          width={"500px"}
+          height={"350px"}
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"flex-start"}
+          justifyContent={"flex-start"}
+          mr={"100px"}
         >
-          {homepageContent.values?.map((item) => (
-            <ValueIcon key={item.text} icon={item.icon} text={item.text} />
+          <Title textColor={"white"} text={"Our Values"} />
+          <Typography fontSize={"32px"} fontWeight={700} mt={"20px"}>
+            Our social enterprise&apos;s values include:
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "space-between",
+            height: "350px",
+          }}
+        >
+          {aboutusContents.ourValues.map((item, index) => (
+            <ValueIcon key={index} icon={item.icon} text={item.text} />
           ))}
         </Box>
       </Box>

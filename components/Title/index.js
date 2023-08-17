@@ -15,19 +15,13 @@ const Title = ({ style, color, text, textColor }) => {
             borderRadius={{ md: "10px", xs: "7px" }}
             // border={`2px solid ${textColor}`}
           >
-            <Typography
-              fontSize={{ lg: 30, md: 28, sm: 24, xs: 16 }}
-              fontWeight={600}
-            >
+            <Typography fontSize={"56px"} fontWeight={700}>
               {text}
             </Typography>
           </Box>
         </Box>
       ) : (
-        <Typography
-          fontSize={{ lg: 30, md: 28, sm: 24, xs: 16 }}
-          fontWeight={600}
-        >
+        <Typography fontSize={"56px"} fontWeight={700}>
           {text}
         </Typography>
       )}

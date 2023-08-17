@@ -25,8 +25,8 @@ const Commitment = () => {
     'Providing job opportunities at "Khaw Thwar Mel" for the disabled community.',
   ];
   return (
-    <section className="max-w-screen ">
-      <div className=" flex  justify-between items-center pl-28 h-[50%]">
+    <section className="max-w-full ">
+      <div className=" flex  justify-between items-center pl-28 h-[70%]">
         <div className="flex max-w-full flex-col md:flex-row justify-between items-start ">
           <div className="flex flex-col space-y-6 text-black w-1/2 pr-16">
             <p className="text-[56px] font-bold  leading-[4rem]">
