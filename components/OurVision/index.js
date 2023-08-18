@@ -1,28 +1,56 @@
-import { Box, Typography } from "@mui/material";
-import { aboutusContents } from "../../data/aboutusContents";
+import { Box, Grid, Typography } from "@mui/material";
+import { motion, useInView } from "framer-motion";
+import { contents, fontSizes } from "../../data/aboutUs";
+import { useRef } from "react";
 
 const OurVision = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { amount: 1 });
+
   return (
     <Box
-      width={"100%"}
-      bgcolor={"black"}
-      color={"white"}
-      display={"flex"}
-      flexDirection={"row"}
-      alignItems={"flex-start"}
-      justifyContent={"space-around"}
-      py={"100px"}
+      ref={sectionRef}
+      sx={{
+        width: "100%",
+        bgcolor: "black",
+        color: "white",
+        py: 15,
+      }}
     >
-      <Box>
-        <Typography fontSize={"56px"} fontWeight={700}>
-          Our Vision
-        </Typography>
-      </Box>
-      <Box width={"700px"}>
-        <Typography fontSize={"32px"} fontWeight={700}>
-          {aboutusContents.ourVision}
-        </Typography>
-      </Box>
+      <Grid
+        container
+        columns={{ lg: 12, md: 6, xs: 6 }}
+        rowSpacing={5}
+        alignItems={{ lg: "flex-start", md: "center" }}
+        justifyContent={"center"}
+      >
+        <Grid item lg={5} md={5} xs={5}>
+          <Typography
+            sx={{
+              fontSize: fontSizes.heading,
+              fontWeight: 700,
+              textAlign: { lg: "start", md: "center", xs: "center" },
+            }}
+          >
+            Our Vision
+          </Typography>
+        </Grid>
+        <Grid item lg={5} md={5} xs={5}>
+          <Typography
+            component={motion.p}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isInView ? 1 : 0 }}
+            transition={{ duration: 2 }}
+            sx={{
+              fontSize: fontSizes.body,
+              fontWeight: 700,
+              textAlign: { lg: "start", md: "center", xs: "center" },
+            }}
+          >
+            {contents.ourVision}
+          </Typography>
+        </Grid>
+      </Grid>
     </Box>
   );
 };

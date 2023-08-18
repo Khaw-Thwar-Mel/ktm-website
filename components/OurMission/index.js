@@ -1,27 +1,46 @@
-import { Box, Typography } from "@mui/material";
-import { aboutusContents } from "../../data/aboutusContents";
+import { Box, Grid, Typography } from "@mui/material";
 import { colors } from "../../data/colors";
+import { contents, fontSizes } from "../../data/aboutUs";
 
 const OurMission = () => {
   return (
     <Box
-      width={"100%"}
-      display={"flex"}
-      flexDirection={"row"}
-      alignItems={"flex-start"}
-      justifyContent={"space-around"}
-      py={"100px"}
+      sx={{
+        width: "100%",
+        py: 15,
+      }}
     >
-      <Box>
-        <Typography fontSize={"56px"} fontWeight={700} color={colors.yellow}>
-          Our Mission
-        </Typography>
-      </Box>
-      <Box width={"700px"}>
-        <Typography fontSize={"32px"} fontWeight={700}>
-          {aboutusContents.ourMission}
-        </Typography>
-      </Box>
+      <Grid
+        container
+        columns={{ lg: 12, md: 6, xs: 6 }}
+        rowSpacing={5}
+        alignItems={{ lg: "flex-start", md: "center" }}
+        justifyContent={"center"}
+      >
+        <Grid item lg={5} md={5} xs={5}>
+          <Typography
+            sx={{
+              color: colors.yellow,
+              fontSize: fontSizes.heading,
+              fontWeight: 700,
+              textAlign: { lg: "start", md: "center", xs: "center" },
+            }}
+          >
+            Our Mission
+          </Typography>
+        </Grid>
+        <Grid item lg={5} md={5} xs={5}>
+          <Typography
+            sx={{
+              fontSize: fontSizes.body,
+              fontWeight: 700,
+              textAlign: { lg: "start", md: "center", xs: "center" },
+            }}
+          >
+            {contents.ourMission}
+          </Typography>
+        </Grid>
+      </Grid>
     </Box>
   );
 };

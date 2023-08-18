@@ -6,10 +6,16 @@ import { useRef } from "react";
 
 const OurStory = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { amount: 0.5, once: true });
+  const isInView = useInView(sectionRef, { amount: 0.35, once: true });
 
   return (
-    <Box ref={sectionRef} py={15}>
+    <Box
+      ref={sectionRef}
+      sx={{
+        width: "100%",
+        py: 15,
+      }}
+    >
       <Grid
         container
         columns={{ lg: 12, md: 6, xs: 6 }}
@@ -43,7 +49,6 @@ const OurStory = () => {
             }}
             transition={{ duration: 0.8 }}
             sx={{
-              py: 0,
               fontSize: fontSizes.body,
               fontWeight: 700,
               textAlign: { lg: "start", md: "center", xs: "center" },
