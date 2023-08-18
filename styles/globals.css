@@ -57,3 +57,33 @@ button,
 :root {
   --swiper-theme-color: #fccd35 !important;
 }
+
+.swiper-pagination {
+  height: 60px;
+  text-align: start !important;
+}
+
+.swiper-pagination-bullet {
+  width: 50px !important;
+  height: 50px !important;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  color: #fccd35;
+  background: transparent !important;
+  font-weight: 700;
+  border: 1px solid #fccd35;
+}
+.swiper-pagination-bullets {
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.swiper-wrapper {
+  margin-top: 6rem;
+}
+
+.swiper-pagination-bullet-active {
+  color: #000000;
+  background: #fccd35 !important;
+}
