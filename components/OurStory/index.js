@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { colors } from "../../data/colors";
 import { motion, useInView } from "framer-motion";
-import { contents, fontSizes } from "../../data/aboutUs";
+import { aboutUsContents, fontSizes } from "../../data/aboutUs";
 import { useRef } from "react";
 
 const OurStory = () => {
@@ -54,7 +54,7 @@ const OurStory = () => {
               textAlign: { lg: "start", md: "center", xs: "center" },
             }}
           >
-            {contents.ourStory}
+            {aboutUsContents.ourStory}
           </Typography>
         </Grid>
       </Grid>

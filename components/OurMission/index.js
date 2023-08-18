@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { colors } from "../../data/colors";
-import { contents, fontSizes } from "../../data/aboutUs";
+import { aboutUsContents, fontSizes } from "../../data/aboutUs";
 
 const OurMission = () => {
   return (
@@ -37,7 +37,7 @@ const OurMission = () => {
               textAlign: { lg: "start", md: "center", xs: "center" },
             }}
           >
-            {contents.ourMission}
+            {aboutUsContents.ourMission}
           </Typography>
         </Grid>
       </Grid>

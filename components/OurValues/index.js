@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import ValueIcon from "./ValueIcon";
-import { contents, fontSizes } from "../../data/aboutUs";
+import { aboutUsContents, fontSizes } from "../../data/aboutUs";
 
 const OurValues = () => {
   return (
@@ -47,7 +47,7 @@ const OurValues = () => {
               gap: 3,
             }}
           >
-            {contents.ourValues.map((item, index) => (
+            {aboutUsContents.ourValues.map((item, index) => (
               <ValueIcon key={index} icon={item.icon} text={item.text} />
             ))}
           </Box>

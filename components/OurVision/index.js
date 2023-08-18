@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { motion, useInView } from "framer-motion";
-import { contents, fontSizes } from "../../data/aboutUs";
+import { aboutUsContents, fontSizes } from "../../data/aboutUs";
 import { useRef } from "react";
 
 const OurVision = () => {
@@ -47,7 +47,7 @@ const OurVision = () => {
               textAlign: { lg: "start", md: "center", xs: "center" },
             }}
           >
-            {contents.ourVision}
+            {aboutUsContents.ourVision}
           </Typography>
         </Grid>
       </Grid>

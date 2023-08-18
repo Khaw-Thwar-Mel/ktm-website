@@ -1,4 +1,4 @@
-export const contents = {
+export const aboutUsContents = {
   ourStory:
     "Khaw Thwar Mel was founded by a group of individuals driven by a shared passion to make a meaningful difference. After receiving significant support for our project, we were inspired to launch our socially responsible enterprise. Our current efforts are dedicated to serving the deaf community, and we aim to create more impactful initiatives for the disabled community in the future.",
 
@@ -8,8 +8,8 @@ export const contents = {
   ourMission:
     "Our mission is to accomplish that by leveraging technology and bringing the disabled community not to be left behind in terms of lifestyles and trends.",
 
-  socialCommitments: [
-    "Enabling the deaf community to learn Myanmar Sign Language at their convenience and from any location",
+  ourSocialCommitments: [
+    "Enabling the deaf community to learn Myanmar Sign Language at their convenience and from any location.",
     "Facilitating the fluent reading and writing of both Myanmar and English for the deaf community.",
     "Offering tailor-mad technological courses suited to the needs of deaf individuals.",
     "Ensuring the disabled community possesses the necessary skills to meet job requirements.",
