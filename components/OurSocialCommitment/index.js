@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { colors } from "../../data/colors";
 import { styled } from "styled-components";
+import { aboutUsContents } from "../../data/aboutUs";
 
 const ourSocialCommitment = () => {
   const pagination = {
@@ -16,17 +17,9 @@ const ourSocialCommitment = () => {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
-
-  const swiperText = [
-    "Enabling the deaf community to learn Myanmar Sign Language at  their convenience and from any location.",
-    "Facilitating the fluent reading and writing of both Myanmar and English for the deaf community.",
-    "Offering tailor-made technological courses suited to the needs of deaf individuals.",
-    "Ensuring the disabled community possesses the necessary skills to meet job requirements.",
-    'Providing job opportunities at "Khaw Thwar Mel" for the disabled community.',
-  ];
   return (
     <section className="max-w-full ">
-      <div className=" flex  justify-between items-center pl-28 h-[70%]">
+      <div className=" flex justify-between items-center pl-28">
         <div className="flex max-w-full flex-col md:flex-row justify-between items-start ">
           <div className="flex flex-col space-y-6 text-black w-1/2 pr-16">
             <p className="text-[56px] font-bold  leading-[4rem]">
@@ -81,7 +74,7 @@ const ourSocialCommitment = () => {
                 "--swiper-pagination-bullet-inactive-opacity": "1",
               }}
             >
-              {swiperText.map((text, i) => (
+              {aboutUsContents.ourSocialCommitments.map((text, i) => (
                 <SwiperSlide
                   key={i}
                   className="!max-w-[512px] cursor-grab !max-h-[323px]"
