@@ -48,7 +48,12 @@ const OurValues = () => {
             }}
           >
             {aboutUsContents.ourValues.map((item, index) => (
-              <ValueIcon key={index} icon={item.icon} text={item.text} />
+              <ValueIcon
+                key={index}
+                icon={item.icon}
+                text={item.text}
+                tooltip={item.tooltip}
+              />
             ))}
           </Box>
         </Grid>
