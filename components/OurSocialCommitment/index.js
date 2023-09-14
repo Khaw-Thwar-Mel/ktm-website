@@ -4,32 +4,66 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-// import required modules
+import 'swiper/css/effect-fade';
 import { Pagination } from "swiper";
-import { colors } from "../../data/colors";
+// Import MUI components
+import { Box, Grid, Typography } from "@mui/material";
+// import required modules
 import { styled } from "styled-components";
-import { aboutUsContents } from "../../data/aboutUs";
+import { colors } from "../../data/colors";
+import { aboutUsContents, fontSizes } from "../../data/aboutUs";
 
 const ourSocialCommitment = () => {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
+      if(index!==5){
+        return '<span class="' + className + '">' + (index + 1) + "</span>";
+      }else{
+        return ''
+      }
     },
   };
   return (
-    <section className="max-w-full ">
-      <div className=" flex justify-between items-center pl-28">
-        <div className="flex max-w-full flex-col md:flex-row justify-between items-start ">
-          <div className="flex flex-col space-y-6 text-black w-1/2 pr-16">
-            <p className="text-[56px] font-bold  leading-[4rem]">
-              Our Social Commitments
-            </p>
-            <p className="text-[32px] font-bold ">
-              We try to give society a helping hand in the following ways:
-            </p>
-          </div>
-          <SwiperContainer className="w-1/2 overflow-hidden h-[450px]">
+    <>
+     <Box
+      sx={{
+        width: "100%",
+        py: 15,
+      }}
+    >
+      <Grid
+        container
+        columns={{ lg: 12, md: 6, xs: 6 }}
+        rowSpacing={5}
+        columnSpacing={5}
+        alignItems={{ lg: "flex-start", md: "center" }}
+        justifyContent={"center"}
+      >
+        <Grid item lg={5} md={5} xs={5}>
+          <Typography
+            sx={{
+              fontSize: fontSizes.heading,
+              fontWeight: 700,
+              textAlign: { lg: "start", md: "center", xs: "center" },
+            }}
+          >
+          Our Social Commitments
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: fontSizes.body,
+              fontWeight: 700,
+              textAlign: { lg: "start", md: "center", xs: "center" },
+            }}
+          >
+             We try to give society a helping hand in the following ways:
+          </Typography>
+        </Grid>
+        <Grid item lg={5} md={5} xs={5}>
+          <div className="!relative w-full">
+            <div className='rounded-[50px] top-[5.5rem] absolute w-[512px] h-[323px]' style={{backgroundColor:colors.yellow}}/>
+        <SwiperContainer className="w-full overflow-hidden h-[450px]">
             <Swiper
               pagination={pagination}
               modules={[Pagination]}
@@ -86,9 +120,13 @@ const ourSocialCommitment = () => {
               ))}
             </Swiper>
           </SwiperContainer>
-        </div>
-      </div>
-    </section>
+          </div>
+
+        </Grid>
+      </Grid>
+    </Box>
+
+    </>
   );
 };
 
@@ -96,10 +134,7 @@ export default ourSocialCommitment;
 
 const SwiperContainer = styled.div`
   .swiper-slide {
-    background-color: ${colors.yellow};
     border-radius: 50px;
   }
-  .swiper-slide-next {
-    background-color: white !important;
-  }
+
 `;
