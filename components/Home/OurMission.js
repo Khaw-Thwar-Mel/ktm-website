@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { colors } from "../../data/colors";
 import { aboutUsContents, fontSizes } from "../../data/aboutUs";
 
-const OurMission = () => {
+export default function OurMission() {
   return (
     <Box
       sx={{
@@ -43,6 +43,4 @@ const OurMission = () => {
       </Grid>
     </Box>
   );
-};
-
-export default OurMission;
+}

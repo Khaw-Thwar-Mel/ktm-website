@@ -1,18 +1,19 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { colors } from "../../data/colors";
 import { motion, useInView } from "framer-motion";
 import { aboutUsContents, fontSizes } from "../../data/aboutUs";
 import { useRef } from "react";
 
-const OurStory = () => {
+export default function OurVision() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { amount: 0.35, once: true });
+  const isInView = useInView(sectionRef, { amount: 1 });
 
   return (
     <Box
       ref={sectionRef}
       sx={{
         width: "100%",
+        bgcolor: "black",
+        color: "white",
         py: 15,
       }}
     >
@@ -25,41 +26,31 @@ const OurStory = () => {
       >
         <Grid item lg={5} md={5} xs={5}>
           <Typography
-            component={motion.p}
-            initial={{ x: -100 }}
-            animate={{ x: isInView ? 0 : -100 }}
-            transition={{ duration: 0.8 }}
             sx={{
               fontSize: fontSizes.heading,
               fontWeight: 700,
-              color: colors.yellow,
               textAlign: { lg: "start", md: "center", xs: "center" },
             }}
           >
-            Our Story
+            Our Vision
           </Typography>
         </Grid>
         <Grid item lg={5} md={5} xs={5}>
           <Typography
             component={motion.p}
-            initial={{ x: 100, lineHeight: 4 }}
-            animate={{
-              x: isInView ? 0 : 100,
-              lineHeight: isInView ? 1.5 : 4,
-            }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isInView ? 1 : 0 }}
+            transition={{ duration: 2 }}
             sx={{
               fontSize: fontSizes.body,
               fontWeight: 700,
               textAlign: { lg: "start", md: "center", xs: "center" },
             }}
           >
-            {aboutUsContents.ourStory}
+            {aboutUsContents.ourVision}
           </Typography>
         </Grid>
       </Grid>
     </Box>
   );
-};
-
-export default OurStory;
+}

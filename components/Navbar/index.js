@@ -6,7 +6,7 @@ import { navigationLinks } from "../../data";
 /* eslint-disable react/display-name */
 const Navbar = () => {
   return (
-    <nav className="fixed bg-[#FFFFFFD9] p-4 h-28 w-full flex">
+    <nav className="fixed bg-[#FFFFFFD9] p-4 h-[10vh] w-full flex">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/">

@@ -6,7 +6,18 @@ export default function Layout({ children }) {
   return (
     <Box>
       <Navbar />
-      <main>{children}</main>
+      <main
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop: "10vh",
+        }}
+      >
+        {children}
+      </main>
       <Footer />
     </Box>
   );

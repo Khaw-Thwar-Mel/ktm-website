@@ -1,15 +1,24 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import OurSocialCommitment from "../components/Home/OurSocialCommitment";
+import OurMission from "../components/Home/OurMission";
+import OurStory from "../components/Home/OurStory";
+import OurVision from "../components/Home/OurVision";
+import OurValues from "../components/Home/OurValues";
 
 export default function HomePage() {
   return (
     <Box
       width={"100%"}
-      height={"500px"}
       display={"flex"}
+      flexDirection={"column"}
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Typography>Home Page</Typography>
+      <OurStory />
+      <OurVision />
+      <OurMission />
+      <OurSocialCommitment />
+      <OurValues />
     </Box>
   );
 }

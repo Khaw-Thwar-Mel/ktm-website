@@ -1,4 +1,5 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import Blog from "../../components/Blogs/Blog";
 
 const Blogs = () => {
   return (
@@ -9,7 +10,7 @@ const Blogs = () => {
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Typography>Blogs Page</Typography>
+      <Blog />
     </Box>
   );
 };

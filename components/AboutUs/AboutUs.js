@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-const AboutUs = () => {
+export default function AboutUs() {
   return (
     <Box
       width={"100%"}
@@ -10,11 +10,8 @@ const AboutUs = () => {
       color={"white"}
       justifyContent={"center"}
       alignItems={"center"}
-      marginTop={"112px"}
     >
       <Typography>About Us</Typography>
     </Box>
   );
-};
-
-export default AboutUs;
+}

@@ -1,15 +1,10 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { motion, useInView } from "framer-motion";
+import ValueIcon from "./ValueIcon";
 import { aboutUsContents, fontSizes } from "../../data/aboutUs";
-import { useRef } from "react";
 
-const OurVision = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { amount: 1 });
-
+export default function OurValues() {
   return (
     <Box
-      ref={sectionRef}
       sx={{
         width: "100%",
         bgcolor: "black",
@@ -29,30 +24,40 @@ const OurVision = () => {
             sx={{
               fontSize: fontSizes.heading,
               fontWeight: 700,
-              textAlign: { lg: "start", md: "center", xs: "center" },
             }}
           >
-            Our Vision
+            Our Values
           </Typography>
-        </Grid>
-        <Grid item lg={5} md={5} xs={5}>
           <Typography
-            component={motion.p}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isInView ? 1 : 0 }}
-            transition={{ duration: 2 }}
             sx={{
               fontSize: fontSizes.body,
               fontWeight: 700,
-              textAlign: { lg: "start", md: "center", xs: "center" },
+              mt: "20px",
             }}
           >
-            {aboutUsContents.ourVision}
+            Our social enterprise&apos;s values include:
           </Typography>
+        </Grid>
+        <Grid item lg={5} md={5} xs={5}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: 3,
+            }}
+          >
+            {aboutUsContents.ourValues.map((item, index) => (
+              <ValueIcon
+                key={index}
+                icon={item.icon}
+                text={item.text}
+                tooltip={item.tooltip}
+              />
+            ))}
+          </Box>
         </Grid>
       </Grid>
     </Box>
   );
-};
-
-export default OurVision;
+}
