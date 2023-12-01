@@ -4,8 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/effect-fade";
+
 import { Pagination } from "swiper";
+
 // Import MUI components
 import { Box, Grid, Typography } from "@mui/material";
 // import required modules
@@ -13,7 +14,7 @@ import { styled } from "styled-components";
 import { colors } from "../../data/colors";
 import { aboutUsContents, fontSizes } from "../../data/aboutUs";
 
-export default function OurSocialCommitment() {
+const ourSocialCommitment = () => {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -61,7 +62,7 @@ export default function OurSocialCommitment() {
             </Typography>
           </Grid>
           <Grid item lg={5} md={5} xs={5}>
-            <div className="!relative w-full">
+            <div className="!relative w-full ">
               <div
                 className="rounded-[50px] top-[5.5rem] absolute w-[512px] h-[323px]"
                 style={{ backgroundColor: colors.yellow }}
@@ -70,43 +71,18 @@ export default function OurSocialCommitment() {
                 <Swiper
                   pagination={pagination}
                   modules={[Pagination]}
-                  breakpoints={{
-                    // when window width is >= 320px
-                    280: {
-                      slidesPerView: 1,
-                      spaceBetween: 0,
+                  effect={"creative"}
+                  creativeEffect={{
+                    prev: {
+                      shadow: true,
+                      translate: [0, 0, -400],
                     },
-                    400: {
-                      slidesPerView: 1,
-                      spaceBetween: 0,
-                    },
-                    540: {
-                      slidesPerView: 1,
-                      spaceBetween: 0,
-                    },
-                    // when window width is >= 480px
-                    640: {
-                      slidesPerView: 1,
-                      spaceBetween: 20,
-                    },
-                    // when window width is >= 640px
-                    880: {
-                      slidesPerView: 1.2,
-                      spaceBetween: 20,
-                    },
-                    1180: {
-                      slidesPerView: 1.2,
-                      spaceBetween: 30,
-                    },
-                    1260: {
-                      slidesPerView: 1.2,
-                      spaceBetween: 40,
-                    },
-                    1440: {
-                      slidesPerView: 1.3,
-                      spaceBetween: 40,
+                    next: {
+                      translate: ["100%", 0, 0],
                     },
                   }}
+                  grabCursor={true}
+                  slidesPerView={1}
                   style={{
                     "--swiper-pagination-bullet-inactive-opacity": "1",
                   }}
@@ -114,7 +90,7 @@ export default function OurSocialCommitment() {
                   {aboutUsContents.ourSocialCommitments.map((text, i) => (
                     <SwiperSlide
                       key={i}
-                      className="!max-w-[512px] cursor-grab !max-h-[323px]"
+                      className="!max-w-[512px] !max-h-[323px]"
                     >
                       <div className="p-4 rounded-3xl w-[512px] h-[323px] text-[28px] px-8 font-bold flex items-center">
                         <p>{text}</p>
@@ -129,7 +105,9 @@ export default function OurSocialCommitment() {
       </Box>
     </>
   );
-}
+};
+
+export default ourSocialCommitment;
 
 const SwiperContainer = styled.div`
   .swiper-slide {
