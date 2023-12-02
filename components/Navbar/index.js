@@ -1,31 +1,65 @@
 import Image from "next/image";
 import { Link } from "@mui/material";
-import NavbarLink from "./navbarLink";
+import NavbarLink from "./NavbarLink";
 import { navigationLinks } from "../../data";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
+import { Box, Stack } from "@mui/material";
 
 /* eslint-disable react/display-name */
-const Navbar = () => {
+export default function Navbar() {
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(true);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(false);
+    } else {
+      latest < 150 && setHidden(true);
+    }
+  });
+
   return (
-    <nav className="fixed bg-[#FFFFFFD9] p-4 h-[10vh] w-full flex">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-          <Link href="/">
-            <Image
-              alt="KhawThwarMel"
-              src="/assets/KhawThwarMelWordmark.svg"
-              width={130}
-              height={16.92}
-            />
-          </Link>
-        </div>
-        <div className="flex justify-between basis-1/4">
+    <motion.nav
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      style={{
+        position: "fixed",
+        backgroundColor: "#FFFFFFD9",
+        height: "10vh",
+        width: "100%",
+        display: "flex",
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          mx: "auto",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          px: 10,
+        }}
+      >
+        <Link href="/">
+          <Image
+            alt="KhawThwarMel"
+            src="/assets/KhawThwarMelWordmark.svg"
+            width={130}
+            height={16.92}
+          />
+        </Link>
+        <Stack direction={"row"} gap={5}>
           {navigationLinks.map((item, index) => (
             <NavbarLink key={index} href={item.link} text={item.text} />
           ))}
-        </div>
-      </div>
-    </nav>
+        </Stack>
+      </Box>
+    </motion.nav>
   );
-};
-
-export default Navbar;
+}

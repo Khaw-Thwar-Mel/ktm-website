@@ -36,11 +36,15 @@ export const navigationLinks = [
     text: "Home",
   },
   {
-    link: "/aboutus",
-    text: "About Us",
+    link: "/career",
+    text: "Career",
   },
   {
     link: "/blogs",
     text: "Blogs",
+  },
+  {
+    link: "/contact",
+    text: "Contact Us",
   },
 ];

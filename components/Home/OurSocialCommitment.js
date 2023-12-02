@@ -14,7 +14,7 @@ import { styled } from "styled-components";
 import { colors } from "../../data/colors";
 import { aboutUsContents, fontSizes } from "../../data/aboutUs";
 
-const ourSocialCommitment = () => {
+export default function ourSocialCommitment() {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -105,9 +105,7 @@ const ourSocialCommitment = () => {
       </Box>
     </>
   );
-};
-
-export default ourSocialCommitment;
+}
 
 const SwiperContainer = styled.div`
   .swiper-slide {

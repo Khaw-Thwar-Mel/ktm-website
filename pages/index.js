@@ -4,6 +4,7 @@ import OurMission from "../components/Home/OurMission";
 import OurStory from "../components/Home/OurStory";
 import OurVision from "../components/Home/OurVision";
 import OurValues from "../components/Home/OurValues";
+import Hero from "../components/Home/Hero";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       justifyContent={"center"}
       alignItems={"center"}
     >
+      <Hero />
       <OurStory />
       <OurVision />
       <OurMission />
