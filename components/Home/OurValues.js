@@ -1,63 +1,102 @@
-import { Box, Grid, Typography } from "@mui/material";
-import ValueIcon from "./ValueIcon";
-import { aboutUsContents, fontSizes } from "../../data/aboutUs";
+import { Box, Typography, Stack } from "@mui/material";
+import { colors } from "../../data/colors";
+import Image from "next/image";
+import { homepageContent } from "../../data/homepage";
+import { useEffect, useState } from "react";
 
 export default function OurValues() {
+  const data = homepageContent.ourValues;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [displayData, setDisplayData] = useState({
+    title: data[0].title,
+    text: data[0].text,
+    icon: data[0].icon,
+    altText: data[0].altText,
+  });
+
+  useEffect(() => {
+    setDisplayData({
+      title: data[activeIndex].title,
+      text: data[activeIndex].text,
+      icon: data[activeIndex].icon,
+      altText: data[activeIndex].altText,
+    });
+  }, [data, activeIndex]);
+
   return (
     <Box
       sx={{
         width: "100%",
-        bgcolor: "black",
-        color: "white",
-        py: 15,
+        display: "flex",
+        alignItems: "center",
+        bgcolor: colors.purple,
+        color: colors.yellow,
+        py: 10,
+        px: 20,
       }}
     >
-      <Grid
-        container
-        columns={{ lg: 12, md: 6, xs: 6 }}
-        rowSpacing={5}
-        alignItems={{ lg: "flex-start", md: "center" }}
-        justifyContent={"center"}
+      <Box
+        sx={{
+          width: "40%",
+        }}
       >
-        <Grid item lg={5} md={5} xs={5}>
-          <Typography
-            sx={{
-              fontSize: fontSizes.heading,
-              fontWeight: 700,
-            }}
-          >
-            Our Values
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: fontSizes.body,
-              fontWeight: 700,
-              mt: "20px",
-            }}
-          >
-            Our social enterprise&apos;s values include:
-          </Typography>
-        </Grid>
-        <Grid item lg={5} md={5} xs={5}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: 3,
-            }}
-          >
-            {aboutUsContents.ourValues.map((item, index) => (
-              <ValueIcon
+        <Image
+          quality={100}
+          priority={true}
+          src={displayData.icon}
+          alt={displayData.altText}
+          width={100}
+          height={100}
+          style={{
+            width: "50%",
+            height: "auto",
+          }}
+        />
+      </Box>
+
+      <Stack direction={"column"} gap={4} width={"60%"}>
+        <Typography
+          sx={{
+            fontWeight: 700,
+            fontSize: "42px",
+          }}
+        >
+          Our Values
+        </Typography>
+        <Typography
+          sx={{
+            fontWeight: 600,
+            fontSize: "32px",
+          }}
+        >
+          {displayData.title}
+        </Typography>
+        <Typography
+          sx={{
+            fontWeight: 400,
+            fontSize: "24px",
+          }}
+        >
+          {displayData.text}
+        </Typography>
+        <Stack direction={"row"} gap={10} pt={5}>
+          {homepageContent.ourValues
+            .filter((item) => item.title != displayData.title)
+            .map((item, index) => (
+              <Typography
                 key={index}
-                icon={item.icon}
-                text={item.text}
-                tooltip={item.tooltip}
-              />
+                sx={{
+                  fontWeight: 600,
+                  fontSize: "24px",
+                  cursor: "pointer",
+                }}
+                onClick={() => setActiveIndex(item.index)}
+              >
+                {item.title} ?
+              </Typography>
             ))}
-          </Box>
-        </Grid>
-      </Grid>
+        </Stack>
+      </Stack>
     </Box>
   );
 }

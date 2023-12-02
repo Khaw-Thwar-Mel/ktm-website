@@ -1,37 +1,50 @@
 export const homepageContent = {
-  heroTagLine1:
-    '"Khaw Thwar Mel" is a social enterprise with the aim of empowering the disabled community through innovative technological solutions, with services including Myanmar Sign Language learning, tailor-made technological courses, and job opportunities.',
-  aboutUs: [
-    "'Khaw Thwar Mel' is founded by a group of individuals with a passion for utilizing technology to enhance the abilities of the disabled community.",
-    "Our goal is to create an inclusive environment where everyone can communicate and work with ease, regardless of their disabilities.",
-    " We strive to address the difficulties that the deaf community faces while also fulfilling their skill requirements and providing job opportunities in the future. ",
-    "We are also trying to generate a valuable dataset for the Myanmar AI community to build a strong social enterprise that will make a lasting impact on both the disabled and AI community.",
-  ],
+  heroTagLine: {
+    header: '"Khaw Thwar Mel" is a social enterprise',
+    body: "With the aim of empowering the disabled community through innovative technological solutions, with services including Myanmar Sign Language learning, tailor-made technological courses, and job opportunities.",
+  },
+  aboutUs:
+    " We strive to address the difficulties that the deaf community faces while also fulfilling their skill requirements and providing job opportunities in the future. We are also trying to generate a valuable dataset for the Myanmar AI community to build a strong social enterprise that will make a lasting impact on both the disabled and AI community.",
   mission:
     "Our mission is to accomplish that by leveraging technology and bringing the disabled community not to be left behind in terms of lifestyles and trends.",
 
   vision:
     "Khaw Thwar Mel's vision extends beyond the deaf community. We aim to foster a more inclusive society in which individuals with disabilities have equal access to technology, education, and employment opportunities. ",
-  values: [
+  ourValues: [
     {
-      text: "Social Responsibility",
+      index: 0,
+      title: "Social Responsibility",
       icon: "/assets/SocialResponsibility.svg",
+      altText: "Social Responsibility",
+      text: "We are committed to making a positive impact on society by working tirelessly to uplift the disabled community through technology, education, and opportunities, fostering a brighter future for all.",
     },
     {
-      text: "Equity",
-      icon: "/assets/Equity.svg",
+      index: 1,
+      title: "Equity",
+      icon: "/assets/equity.svg",
+      altText: "Equity",
+      text: "Committed to fairness and justice, We work towards a world where Deaf individuals enjoy equal access to opportunities and resources, fostering an environment where everyone can thrive.",
     },
     {
-      text: "Innovation",
-      icon: "/assets/Innovation.svg",
+      index: 2,
+      title: "Innovation",
+      icon: "/assets/innovation.svg",
+      altText: "Innovation",
+      text: "We endeavor to craft solutions that enrich the quality of life for the deaf community, enabling them to thrive in a rapidly evolving world. By embracing the cutting edge, we aim to open the door to limitless possibilities.",
     },
     {
-      text: "Inclusivity",
-      icon: "/assets/Inclusivity.svg",
+      index: 3,
+      title: "Inclusivity",
+      icon: "/assets/inclusivity.svg",
+      altText: "Inclusivity",
+      text: "Embracing the strength of diversity, we stand as a beacon of inclusivity, striving to create an environment where every individual, regardless of their background or abilities, feels valued, respected, and included.",
     },
     {
-      text: "Accessibility",
-      icon: "/assets/Accessibility.svg",
+      index: 4,
+      title: "Accessibility",
+      icon: "/assets/accessibility.svg",
+      altText: "Accessibility",
+      text: "Our unwavering focus on inclusivity drives us to remove obstacles and ensure that no one is left behind. By breaking down barriers, we make information, opportunities, and experiences accessible to all, cultivating a society that's both inclusive and empowered.",
     },
   ],
   motto:

@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import OurSocialCommitment from "../components/Home/OurSocialCommitment";
 import OurMission from "../components/Home/OurMission";
-import OurStory from "../components/Home/OurStory";
 import OurVision from "../components/Home/OurVision";
-import OurValues from "../components/Home/OurValues";
 import Hero from "../components/Home/Hero";
+import AboutUs from "../components/Home/AboutUs";
+import OurValues from "../components/Home/OurValues";
 
 export default function HomePage() {
   return (
@@ -16,11 +16,12 @@ export default function HomePage() {
       alignItems={"center"}
     >
       <Hero />
-      <OurStory />
+      <AboutUs />
+      {/* <OurStory /> */}
       <OurVision />
       <OurMission />
-      <OurSocialCommitment />
       <OurValues />
+      <OurSocialCommitment />
     </Box>
   );
 }
