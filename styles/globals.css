@@ -104,6 +104,5 @@ button,
 .swiper-slide-active {
   opacity: 1;
   transform: scale(1);
-  transition:  transform 200;
+  transition: transform 200;
 }
-

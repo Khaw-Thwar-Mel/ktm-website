@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 
 export default function Layout({ children }) {
   return (
-    <Box width={"100vw"} display={"flex"} flexDirection={"column"}>
+    <Box>
       <Navbar />
       <main
         style={{

@@ -15,7 +15,7 @@ export default function Hero() {
         priority={true}
         src={ktmCover}
         alt="KTM Cover"
-        // sizes="100vw"
+        sizes="100vw"
         style={{
           width: "100%",
           height: "auto",
