@@ -7,15 +7,6 @@ export const aboutUsContents = {
 
   ourMission:
     "Our mission is to accomplish that by leveraging technology and bringing the disabled community not to be left behind in terms of lifestyles and trends.",
-
-  ourSocialCommitments: [
-    "Enabling the deaf community to learn Myanmar Sign Language at their convenience and from any location.",
-    "Facilitating the fluent reading and writing of both Myanmar and English for the deaf community.",
-    "Offering tailor-mad technological courses suited to the needs of deaf individuals.",
-    "Ensuring the disabled community possesses the necessary skills to meet job requirements.",
-    'Providing job opportunities at "Khaw Thwar Mel" for the disabled community.',
-    "",
-  ],
 };
 
 export const fontSizes = {

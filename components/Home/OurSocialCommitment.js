@@ -1,114 +1,125 @@
-import React from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
-import { Pagination } from "swiper";
+import { Autoplay } from "swiper";
 
 // Import MUI components
-import { Box, Grid, Typography } from "@mui/material";
-// import required modules
-import { styled } from "styled-components";
+import { Box, Typography, Stack } from "@mui/material";
 import { colors } from "../../data/colors";
-import { aboutUsContents, fontSizes } from "../../data/aboutUs";
+import { homepageContent } from "../../data/homepage";
 
-export default function ourSocialCommitment() {
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      if (index !== 5) {
-        return '<span class="' + className + '">' + (index + 1) + "</span>";
-      } else {
-        return "";
-      }
-    },
-  };
+export default function OurSocialCommitment() {
+  const pagination = ["1", "2", "3", "4", "5"];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
   return (
     <>
       <Box
         sx={{
           width: "100%",
-          py: 15,
+          py: 10,
+          px: 20,
+          display: "flex",
+          flexDirection: "row",
+          color: colors.purple,
+          justifyContent: "space-between",
         }}
       >
-        <Grid
-          container
-          columns={{ lg: 12, md: 6, xs: 6 }}
-          rowSpacing={5}
-          columnSpacing={5}
-          alignItems={{ lg: "flex-start", md: "center" }}
-          justifyContent={"center"}
-        >
-          <Grid item lg={5} md={5} xs={5}>
-            <Typography
-              sx={{
-                fontSize: fontSizes.heading,
-                fontWeight: 700,
-                textAlign: { lg: "start", md: "center", xs: "center" },
-              }}
-            >
-              Our Social Commitments
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: fontSizes.body,
-                fontWeight: 700,
-                textAlign: { lg: "start", md: "center", xs: "center" },
-              }}
-            >
-              We try to give society a helping hand in the following ways:
-            </Typography>
-          </Grid>
-          <Grid item lg={5} md={5} xs={5}>
-            <div className="!relative w-full ">
-              <div
-                className="rounded-[50px] top-[5.5rem] absolute w-[512px] h-[323px]"
-                style={{ backgroundColor: colors.yellow }}
-              />
-              <SwiperContainer className="w-full overflow-hidden h-[450px]">
-                <Swiper
-                  pagination={pagination}
-                  modules={[Pagination]}
-                  effect={"creative"}
-                  creativeEffect={{
-                    prev: {
-                      shadow: true,
-                      translate: [0, 0, -400],
-                    },
-                    next: {
-                      translate: ["100%", 0, 0],
-                    },
-                  }}
-                  grabCursor={true}
-                  slidesPerView={1}
-                  style={{
-                    "--swiper-pagination-bullet-inactive-opacity": "1",
+        <Stack width={"60%"}>
+          <Typography
+            sx={{
+              fontSize: "56px",
+              fontWeight: 700,
+            }}
+          >
+            Our Social <br />
+            Commitments
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: "32px",
+              fontWeight: 400,
+            }}
+          >
+            We try to give society a helping hand <br /> in the following ways:
+          </Typography>
+        </Stack>
+        <Stack direction={"column"} width={"40%"} gap={5}>
+          <Swiper
+            spaceBetween={0}
+            slidesPerView={1}
+            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+            onSwiper={(swiper) => setSwiperInstance(swiper)}
+            style={{
+              width: "100%",
+            }}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 3000,
+              pauseOnMouseEnter: true,
+              disableOnInteraction: false,
+            }}
+          >
+            {homepageContent.ourSocialCommitments.map((item, index) => (
+              <SwiperSlide key={index} style={{}}>
+                <Box
+                  sx={{
+                    bgcolor: colors.yellow,
+                    fontSize: "28px",
+                    fontWeight: 700,
+                    px: 5,
+                    py: 10,
+                    borderRadius: 15,
+                    lineHeight: 1.75,
+                    mx: 15,
+                    width: "80%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "grab",
                   }}
                 >
-                  {aboutUsContents.ourSocialCommitments.map((text, i) => (
-                    <SwiperSlide
-                      key={i}
-                      className="!max-w-[512px] !max-h-[323px]"
-                    >
-                      <div className="p-4 rounded-3xl w-[512px] h-[323px] text-[28px] px-8 font-bold flex items-center">
-                        <p>{text}</p>
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </SwiperContainer>
-            </div>
-          </Grid>
-        </Grid>
+                  {item}
+                </Box>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <Stack direction={"row"} gap={1} ml={15}>
+            {pagination.map((item, index) => (
+              <Box
+                key={index}
+                sx={{
+                  border: 1,
+                  width: "50px",
+                  height: "50px",
+                  borderRadius: "50%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontWeight: 700,
+                  fontSize: "24px",
+                  color: index === activeIndex ? colors.white : colors.purple,
+                  bgcolor: index === activeIndex ? colors.purple : colors.white,
+                  cursor: "pointer",
+                }}
+                onClick={() =>
+                  swiperInstance.slideTo(index, 500, () =>
+                    setActiveIndex(index)
+                  )
+                }
+              >
+                {item}
+              </Box>
+            ))}
+          </Stack>
+        </Stack>
       </Box>
     </>
   );
 }
-
-const SwiperContainer = styled.div`
-  .swiper-slide {
-    border-radius: 50px;
-  }
-`;

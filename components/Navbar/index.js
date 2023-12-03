@@ -34,6 +34,7 @@ export default function Navbar() {
         height: "10vh",
         width: "100%",
         display: "flex",
+        zIndex: 2,
       }}
     >
       <Box

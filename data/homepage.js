@@ -47,6 +47,13 @@ export const homepageContent = {
       text: "Our unwavering focus on inclusivity drives us to remove obstacles and ensure that no one is left behind. By breaking down barriers, we make information, opportunities, and experiences accessible to all, cultivating a society that's both inclusive and empowered.",
     },
   ],
+  ourSocialCommitments: [
+    "Enabling the deaf community to learn Myanmar Sign Language at their convenience and from any location.",
+    "Facilitating the fluent reading and writing of both Myanmar and English for the deaf community.",
+    "Offering tailor-made technological courses suited to the needs of deaf individuals.",
+    "Ensuring the disabled community possesses the necessary skills to meet job requirements.",
+    'Providing job opportunities at "Khaw Thwar Mel" for the disabled community.',
+  ],
   motto:
     "We believe in conducting ourselves with a high level of social responsibility, fostering a diverse workforce, ensuring accessibility for all, and embracing innovation by actively seeking out new and creative solutions to the challenges we face.",
   helpingHand: "We try to give society a helping hand in the following ways:",
