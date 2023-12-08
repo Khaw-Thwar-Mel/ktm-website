@@ -14,8 +14,8 @@ const Mission = () => {
         flexDirection="column"
         gap={{ xl: 6, xs: 4 }}
       >
-        <Item title="Our Vision" description={homepageContent?.vision} />
-        <Item title="Our Mission" description={homepageContent?.mission} />
+        {/* <Item title="Our Vision" description={homepageContent?.vision} />
+        <Item title="Our Mission" description={homepageContent?.mission} /> */}
       </Box>
     </Box>
   );
