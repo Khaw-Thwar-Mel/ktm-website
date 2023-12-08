@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
-import { aboutUsContents, fontSizes } from "../../data/aboutUs";
+import { aboutUsContents } from "../../data/aboutUs";
 import Avatar from "@mui/material/Avatar";
 
 export default function Missionvision() {

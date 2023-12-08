@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { colors } from "../../data/colors";
-import { homepageContent } from "../../data/homepage";
-import Item from "./Item";
+// import { homepageContent } from "../../data/homepage";
+// import Item from "./Item";
 
 const Mission = () => {
   return (

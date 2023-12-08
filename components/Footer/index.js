@@ -1,5 +1,5 @@
 import { Box, Typography, Avatar, Input, Button } from "@mui/material";
-import { contactChannel, socialLinks } from "../../data";
+import { contactChannel } from "../../data";
 import CustomIconButton from "../CustomIconButton";
 
 const Footer = () => {
