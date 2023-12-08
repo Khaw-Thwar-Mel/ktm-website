@@ -25,7 +25,7 @@ export default function HomePage() {
     await setDoc(doc(citiesRef, "SF"), {
       name: "San Francisco",
       state: "CA",
-      country: "MYANMAR",
+      country: "USA",
       capital: false,
       population: 860000,
       regions: ["west_coast", "norcal"],

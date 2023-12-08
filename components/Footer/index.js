@@ -1,6 +1,10 @@
-import { Box, Typography, Avatar, Input, Button } from "@mui/material";
-import { contactChannel } from "../../data";
+import { Box, Typography, Stack } from "@mui/material";
+import { contactChannel, socialLinks } from "../../data";
 import CustomIconButton from "../CustomIconButton";
+import Image from "next/image";
+import FooterLogo from "../../public/assets/FooterLogo.png";
+import CustomButton from "../CustomButton";
+import Input from "../Input";
 
 const Footer = () => {
   return (
@@ -8,7 +12,7 @@ const Footer = () => {
       sx={{
         width: "100%",
         backgroundColor: "black",
-        p: "50px",
+        p: 10,
       }}
     >
       {/* top */}
@@ -17,13 +21,23 @@ const Footer = () => {
           width: "100%",
           heigth: "50%",
           display: "flex",
+          justifyContent: "space-between",
         }}
       >
         {/* left */}
-        <Box>Hi </Box>
+        <Box>
+          <Image alt="KhawThwarMelLogo" src={FooterLogo} />
+        </Box>
 
         {/* right */}
-        <Box sx={{}}>
+        <Box
+          sx={{
+            width: "30%",
+            display: "flex",
+            flexDirection: "column",
+            gap: 5,
+          }}
+        >
           <Box>
             <Typography
               sx={{
@@ -37,22 +51,11 @@ const Footer = () => {
           <Box
             sx={{
               display: "flex",
+              gap: 5,
             }}
           >
-            <Input
-              fullWidth
-              placeholder="Enter your email here!"
-              disableUnderline
-              type="email"
-              sx={{
-                outline: "2px solid white",
-                marginRight: "20px",
-                borderRadius: "5px",
-                width: "437px",
-                height: "65px",
-              }}
-            ></Input>
-            <Button>Subscribe</Button>
+            <Input placeholder={"Enter your email here"} />
+            <CustomButton text={"Subscribe"} />
           </Box>
         </Box>
       </Box>
@@ -80,7 +83,11 @@ const Footer = () => {
             >
               Follow Us On
             </Typography>
-            <Avatar></Avatar>
+            <Stack direction={"row"} gap={3}>
+              {socialLinks?.map((item, index) => (
+                <CustomIconButton key={index} data={item} />
+              ))}
+            </Stack>
           </Box>
           <Box
             sx={{
@@ -101,65 +108,6 @@ const Footer = () => {
         </Box>
       </Box>
     </Box>
-    // <Box>
-    //   <Box
-    //     display={"flex"}
-    //     flexDirection={{ md: "row", xs: "column" }}
-    //     justifyContent={{ md: "space-evenly", xs: "center" }}
-    //     alignItems={{ md: "flex-start", xs: "center" }}
-    //   >
-    //     <Box
-    //       display={"flex"}
-    //       flexDirection={"column"}
-    //       justifyContent={{ md: "flex-start", xs: "center" }}
-    //       alignItems={{ md: "flex-start", xs: "center" }}
-    //       my={{ md: "100px", xs: "50px" }}
-    //     >
-    //       <Typography
-    //         fontSize={{ md: "28px", xs: "24px" }}
-    //         fontWeight={700}
-    //         mb={"30px"}
-    //       >
-    //         Follow Us On
-    //       </Typography>
-    //       <Box
-    //         display={"flex"}
-    //         flexDirection={"row"}
-    //         alignItems={"center"}
-    //         gap={2}
-    //       >
-    //         {socialLinks?.map((item, index) => (
-    //           <CustomIconButton key={index} data={item} />
-    //         ))}
-    //       </Box>
-    //     </Box>
-
-    //     <Box
-    //       display={"flex"}
-    //       flexDirection={"column"}
-    //       alignItems={{ md: "flex-start", xs: "center" }}
-    //       my={{ md: "100px", xs: "50px" }}
-    //     >
-    //       <Typography
-    //         fontSize={{ md: "28px", xs: "24px" }}
-    //         fontWeight={700}
-    //         mb={"30px"}
-    //       >
-    //         Contact Us
-    //       </Typography>
-    //       <Box
-    //         display={"flex"}
-    //         flexDirection={"column"}
-    //         alignItems={{ md: "flex-start", xs: "center" }}
-    //         gap={2}
-    //       >
-    //         {contactChannel?.map((item, index) => (
-    //           <CustomIconButton key={index} data={item} />
-    //         ))}
-    //       </Box>
-    //     </Box>
-    //   </Box>
-    // </Box>
   );
 };
 

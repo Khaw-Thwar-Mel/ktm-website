@@ -64,4 +64,12 @@ export const homepageContent = {
     "Ensuring the disabled community possesses the necessary skills to meet job requirements.",
     "Providing job opportunities at 'Khaw Thwar Mel' for the disabled community.",
   ],
+  footer: {
+    socialLinks: [
+      {
+        icon: "/assests/facebook.svg",
+        link: "/",
+      },
+    ],
+  },
 };
